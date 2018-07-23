@@ -1,23 +1,15 @@
-apply plugin: 'com.android.application'
-
-def static releaseTimeFull() {
-    //例如:2015-07-02//中国时间 东八区
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+08:00"))
-}
-
-def release_time = releaseTimeFull()
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     defaultConfig {
-        applicationId rootProject.ext.android["applicationId"]
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
     }
-
 
     buildTypes {
         release {
@@ -25,20 +17,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //网络层module
-    implementation project(':base-library')
-    //android.support lib
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation rootProject.ext.dependencies["appcompat-v7"]
     implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["recyclerview-v7"]
     implementation rootProject.ext.dependencies["cardview-v7"]
     implementation rootProject.ext.dependencies["annotations"]
     //注解框架
-    implementation rootProject.ext.dependencies["butterknife"]
+    compile rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
     //测试框架
     testImplementation rootProject.ext.dependencies["test-junit"]
@@ -53,4 +44,5 @@ dependencies {
     compile rootProject.ext.dependencies["gson"]
     //圆形头像
     compile rootProject.ext.dependencies["circleimageview"]
+
 }

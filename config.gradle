@@ -25,5 +25,12 @@ ext {
             "espresso-core"       : "com.android.support.test.espresso:espresso-core:3.0.1",
             //协同布局
             "constraint-layout"   : "com.android.support.constraint:constraint-layout:1.1.2",
+            //刷新框架
+            "SmartRefreshLayout"  : "com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1",
+            "SmartRefreshHeader"  : "com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1",
+            //json 解析
+            "gson"                : "com.google.code.gson:gson:2.8.0",
+            //圆形头像
+            "circleimageview"     : "de.hdodenhof:circleimageview:2.2.0",
     ]
 }

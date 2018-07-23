@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/lib_hello_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="我是Lib库的TextView" />
+
+    <TextView
+        android:id="@+id/lib_hello_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="我是Lib库的TextView1" />
+
+    <TextView
+        android:id="@+id/lib_hello_tv2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="我是Lib库的TextView2" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_launcher_background" />
+
+
+</LinearLayout>
