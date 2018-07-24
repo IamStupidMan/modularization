@@ -6,6 +6,7 @@
         <activity
             android:name="ui.LibActivity"
             android:screenOrientation="portrait" />
+        <activity android:name="base.BaseActivity"></activity>
     </application>
 
 </manifest>

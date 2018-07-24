@@ -1,6 +1,9 @@
 package com.summerdear.modularization;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
 
 import utils.AppUtils;
 import utils.CrashUtils;
@@ -15,7 +18,9 @@ import utils.Utils;
  *     desc  : app about utils
  * </pre>
  */
-public class MyApplication extends BaseApplication {
+public class MyApplication extends Application {
+
+    private static final String TAG = "MyApplication";
 
     private static MyApplication sInstance;
 
@@ -27,11 +32,51 @@ public class MyApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
+        //工具类初始化
         Utils.init(this);
+        registerActivityLifecycleCallbacks(mCallbacks);
 //        initLeakCanary();
         initLog();
         initCrash();
     }
+
+    private ActivityLifecycleCallbacks mCallbacks = new ActivityLifecycleCallbacks() {
+
+        @Override
+        public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+            LogUtils.d(TAG, "onActivityCreated() called with: activity = [" + activity + "], savedInstanceState = [" + savedInstanceState + "]");
+        }
+
+        @Override
+        public void onActivityStarted(Activity activity) {
+            LogUtils.d(TAG, "onActivityStarted() called with: activity = [" + activity + "]");
+        }
+
+        @Override
+        public void onActivityResumed(Activity activity) {
+            LogUtils.d(TAG, "onActivityResumed() called with: activity = [" + activity + "]");
+        }
+
+        @Override
+        public void onActivityPaused(Activity activity) {
+            LogUtils.d(TAG, "onActivityPaused() called with: activity = [" + activity + "]");
+        }
+
+        @Override
+        public void onActivityStopped(Activity activity) {
+            LogUtils.d(TAG, "onActivityStopped() called with: activity = [" + activity + "]");
+        }
+
+        @Override
+        public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+            LogUtils.d(TAG, "onActivitySaveInstanceState() called with: activity = [" + activity + "], outState = [" + outState + "]");
+        }
+
+        @Override
+        public void onActivityDestroyed(Activity activity) {
+            LogUtils.d(TAG, "onActivityDestroyed() called with: activity = [" + activity + "]");
+        }
+    };
 
 //    private void initLeakCanary() {
 //        // 内存泄露检查工具

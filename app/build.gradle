@@ -25,15 +25,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //网络层module
+    //base module
     implementation project(':base-library')
     //android.support lib
     implementation rootProject.ext.dependencies["appcompat-v7"]
-    implementation rootProject.ext.dependencies["design"]
+//    implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["recyclerview-v7"]
     implementation rootProject.ext.dependencies["cardview-v7"]
     implementation rootProject.ext.dependencies["annotations"]
@@ -47,10 +51,13 @@ dependencies {
     //协同布局
     implementation rootProject.ext.dependencies["constraint-layout"]
     //刷新布局
-    compile rootProject.ext.dependencies["SmartRefreshLayout"]
-    compile rootProject.ext.dependencies["SmartRefreshHeader"]
+    implementation rootProject.ext.dependencies["SmartRefreshLayout"]
+    implementation rootProject.ext.dependencies["SmartRefreshHeader"]
     //json 解析
-    compile rootProject.ext.dependencies["gson"]
+    implementation rootProject.ext.dependencies["gson"]
     //圆形头像
-    compile rootProject.ext.dependencies["circleimageview"]
+    implementation rootProject.ext.dependencies["circleimageview"]
+    //Glide图片库
+    implementation rootProject.ext.dependencies["glide"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
 }
