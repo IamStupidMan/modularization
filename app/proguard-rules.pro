@@ -31,4 +31,7 @@
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 # for DexGuard only
 -keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+# AppGlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep class com.bumptech.glide.GeneratedAppGlideModuleImpl
 # Glide-----------------end

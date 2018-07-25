@@ -14,6 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import glide.GlideLoader;
+import glide.RequestOptionFactory;
 import utils.LogUtils;
 
 public class LibActivity extends BaseActivity {
@@ -27,6 +28,9 @@ public class LibActivity extends BaseActivity {
     TextView libHelloTv2;
     @BindView(R2.id.iv_pic)
     ImageView ivPic;
+    @BindView(R2.id.profile_image)
+    ImageView profileImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,8 @@ public class LibActivity extends BaseActivity {
         setContentView(R.layout.activity_lib);
         ButterKnife.bind(this);
 
-        GlideLoader.load(this,"",ivPic,null,null,null);
+        GlideLoader.load(this, GlideLoader.URL, ivPic, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
+        GlideLoader.load(this, GlideLoader.URL, profileImage, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
     }
 
 
