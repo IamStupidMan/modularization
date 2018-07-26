@@ -17,4 +17,7 @@
                  android:src="@drawable/profile"
                  app:civ_border_width="2dp"
                  app:civ_border_color="#FF000000"/>
+==4、Glide工具类封装，使用示例：
+        GlideLoader.load(this, GlideLoader.URL, profileImage, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
+==5、网络框架使用：Retrofit2.0+RxJava2.0+OkHttp3.0(后期还会加入Dagger2.0和生命周期绑定)
 

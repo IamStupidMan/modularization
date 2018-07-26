@@ -5,6 +5,10 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+
 import utils.AppUtils;
 import utils.CrashUtils;
 import utils.LogUtils;
@@ -26,6 +30,17 @@ public class MyApplication extends Application {
 
     public static MyApplication getInstance() {
         return sInstance;
+    }
+
+    static {
+        //设置全局的Header构建器
+        SmartRefreshLayout.setDefaultRefreshHeaderCreator((context, layout) -> {
+            return new ClassicsHeader(context);//指定为经典Header，默认是 贝塞尔雷达Header
+        });
+        //设置全局的Footer构建器
+        SmartRefreshLayout.setDefaultRefreshFooterCreator((context, layout) -> {
+            return new ClassicsFooter(context);//指定为经典Footer，默认是 BallPulseFooter
+        });
     }
 
     @Override

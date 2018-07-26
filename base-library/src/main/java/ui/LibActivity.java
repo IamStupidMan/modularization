@@ -40,6 +40,8 @@ public class LibActivity extends BaseActivity {
 
         GlideLoader.load(this, GlideLoader.URL, ivPic, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
         GlideLoader.load(this, GlideLoader.URL, profileImage, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
+
+//        Api.getApiService().fetchSingleFundBasic()
     }
 
 
