@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable;
  * Created by SummerDear on 2018/7/26.
  */
 
-public class BaseObserver<T> implements Observer<BaseEntity<T>>, HttpResponseListener {
+public class BaseObserver<T> implements Observer<BaseEntity<T>>, HttpResponseListener<T> {
 
     /**
      * 唯一标识
@@ -40,19 +40,22 @@ public class BaseObserver<T> implements Observer<BaseEntity<T>>, HttpResponseLis
 
     @Override
     public void onNext(BaseEntity<T> tBaseEntity) {
-        onSuccess(tBaseEntity.getData());
+        //todo 接口协定code == 0表示请求成功
+        if (0 == tBaseEntity.getCode()) {
+            onSuccess(tBaseEntity.getData());
+        } else {
+            onFail(new ApiException(tBaseEntity.getCode(), tBaseEntity.getMessage()));
+        }
     }
 
     @Override
     public void onError(Throwable throwable) {
-        removeObserver();
         ApiException e;
         if (throwable instanceof ApiException) {
             e = (ApiException) throwable;
         } else {
-            e = new ApiException(throwable, 1);
+            e = new ApiException(throwable, ExceptionEngine.UN_KNOWN_ERROR);
         }
-        //todo 错误处理
         onFail(e);
     }
 
@@ -61,6 +64,7 @@ public class BaseObserver<T> implements Observer<BaseEntity<T>>, HttpResponseLis
         if (mDisposable != null && !mDisposable.isDisposed()) {
             mDisposable.dispose();
         }
+        dismissProgressDialog();
     }
 
     /**
@@ -92,11 +96,12 @@ public class BaseObserver<T> implements Observer<BaseEntity<T>>, HttpResponseLis
 
     @Override
     public void onFail(ApiException e) {
+        removeObserver();
         dismissProgressDialog();
     }
 
     @Override
-    public void onSuccess(Object o) {
+    public void onSuccess(T t) {
         onComplete();
     }
 

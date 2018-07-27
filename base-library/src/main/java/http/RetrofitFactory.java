@@ -1,9 +1,14 @@
 package http;
 
+import com.example.networklibrary.BuildConfig;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import http.interceptor.AuthInterceptor;
+import http.interceptor.HeaderInterceptor;
+import http.interceptor.HttpLoggingInterceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -23,6 +28,7 @@ public class RetrofitFactory {
 
     public static final long connectTimeoutMills = 10 * 1000L;
     public static final long readTimeoutMills = 10 * 1000L;
+    public static final long writeTimeoutMills = 10 * 1000L;
 
 
     private RetrofitFactory() {
@@ -103,6 +109,11 @@ public class RetrofitFactory {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(connectTimeoutMills, TimeUnit.MILLISECONDS);
         builder.readTimeout(readTimeoutMills, TimeUnit.MILLISECONDS);
+        builder.writeTimeout(writeTimeoutMills, TimeUnit.MILLISECONDS);
+        builder.retryOnConnectionFailure(false);
+        builder.addInterceptor(new AuthInterceptor());
+        builder.addInterceptor(new HeaderInterceptor());
+        builder.addNetworkInterceptor(new HttpLoggingInterceptor().setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE));
         OkHttpClient client = builder.build();
         clientMap.put(baseUrl, client);
         return client;

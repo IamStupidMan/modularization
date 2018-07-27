@@ -9,16 +9,24 @@ import android.widget.Toast;
 import com.example.networklibrary.R;
 import com.example.networklibrary.R2;
 
+import java.util.Map;
+
 import base.BaseActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import glide.GlideLoader;
 import glide.RequestOptionFactory;
+import http.Api;
+import http.ApiException;
+import http.BaseObserver;
+import http.HttpRequestMap;
+import http.HttpUtils;
+import model.FundDetailModel;
 import utils.LogUtils;
+import utils.ToastUtils;
 
 public class LibActivity extends BaseActivity {
-
 
     @BindView(R2.id.lib_hello_tv)
     TextView libHelloTv;
@@ -39,9 +47,27 @@ public class LibActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         GlideLoader.load(this, GlideLoader.URL, ivPic, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
-        GlideLoader.load(this, GlideLoader.URL, profileImage, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
+        GlideLoader.load(this, GlideLoader.URL, profileImage,RequestOptionFactory.CROP_TYPE_FIT_CENTER);
 
 //        Api.getApiService().fetchSingleFundBasic()
+
+        Map<String, String> request = HttpRequestMap.getRequest();
+        request.put("fundCode", "002068");
+        HttpUtils.getData(Api.getApiService().fetchSingleFundBasic(request), new BaseObserver<FundDetailModel>(this, "main") {
+            @Override
+            public void onFail(ApiException e) {
+                ToastUtils.showShort("onFail");
+                super.onFail(e);
+            }
+
+            @Override
+            public void onSuccess(FundDetailModel fundDetailModel) {
+                ToastUtils.showShort("onSuccess");
+                libHelloTv.setText(fundDetailModel.toString());
+                LogUtils.e(fundDetailModel.toString());
+                super.onSuccess(fundDetailModel);
+            }
+        });
     }
 
 

@@ -45,5 +45,6 @@ ext {
             "rxjava"                  : "io.reactivex.rxjava2:rxjava:2.1.8",
             "rxlifecycle"             : "com.trello.rxlifecycle2:rxlifecycle:2.2.1",
             "rxlifecycle-components"  : "com.trello.rxlifecycle2:rxlifecycle-components:2.2.1",
+            "logging"                 : "com.squareup.okhttp3:logging-interceptor:3.5.0",
     ]
 }

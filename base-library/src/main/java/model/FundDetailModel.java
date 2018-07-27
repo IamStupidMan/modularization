@@ -749,4 +749,82 @@ public class FundDetailModel implements Serializable {
             this.managerName = managerName;
         }
     }
+
+    @Override
+    public String toString() {
+        return "FundDetailModel{" +
+                "investmentStrategy='" + investmentStrategy + '\'' +
+                ", accumulateNav='" + accumulateNav + '\'' +
+                ", dividendUpdateEnable='" + dividendUpdateEnable + '\'' +
+                ", fundSizeDate='" + fundSizeDate + '\'' +
+                ", investmentScope='" + investmentScope + '\'' +
+                ", launchPrice='" + launchPrice + '\'' +
+                ", specializeSector='" + specializeSector + '\'' +
+                ", sevenDaysAnnualizedYield='" + sevenDaysAnnualizedYield + '\'' +
+                ", fundManagers='" + fundManagers + '\'' +
+                ", isMMFund='" + isMMFund + '\'' +
+                ", isQDII='" + isQDII + '\'' +
+                ", minRspAmount='" + minRspAmount + '\'' +
+                ", fundStatus='" + fundStatus + '\'' +
+                ", fundStatusTxt='" + fundStatusTxt + '\'' +
+                ", chargeMode='" + chargeMode + '\'' +
+                ", yearToDate='" + yearToDate + '\'' +
+                ", managementFee='" + managementFee + '\'' +
+                ", investmentObjective='" + investmentObjective + '\'' +
+                ", isSwitchEnable='" + isSwitchEnable + '\'' +
+                ", year1='" + year1 + '\'' +
+                ", fundHouseCode='" + fundHouseCode + '\'' +
+                ", sinceLaunch='" + sinceLaunch + '\'' +
+                ", buyConfirmLag='" + buyConfirmLag + '\'' +
+                ", riskDisclosure='" + riskDisclosure + '\'' +
+                ", fundCustodian='" + fundCustodian + '\'' +
+                ", month6='" + month6 + '\'' +
+                ", month1='" + month1 + '\'' +
+                ", fundManagersList=" + fundManagersList +
+                ", minSubseqBuyAmout='" + minSubseqBuyAmout + '\'' +
+                ", nav='" + nav + '\'' +
+                ", isRspEnable='" + isRspEnable + '\'' +
+                ", defaultDividendInstruction='" + defaultDividendInstruction + '\'' +
+                ", year5='" + year5 + '\'' +
+                ", minSubseqIpoAmount='" + minSubseqIpoAmount + '\'' +
+                ", redemptionSettleLag='" + redemptionSettleLag + '\'' +
+                ", month3='" + month3 + '\'' +
+                ", isBuyEnable='" + isBuyEnable + '\'' +
+                ", ipoStartDate='" + ipoStartDate + '\'' +
+                ", salesServiceFee='" + salesServiceFee + '\'' +
+                ", maxBuyAmount='" + maxBuyAmount + '\'' +
+                ", minSubseqIpoAmout='" + minSubseqIpoAmout + '\'' +
+                ", minRedemptionUnit='" + minRedemptionUnit + '\'' +
+                ", fundCode='" + fundCode + '\'' +
+                ", week1='" + week1 + '\'' +
+                ", fundName='" + fundName + '\'' +
+                ", riskRate=" + riskRate +
+                ", launchDate='" + launchDate + '\'' +
+                ", fundFullName='" + fundFullName + '\'' +
+                ", minRetainUnit='" + minRetainUnit + '\'' +
+                ", navDate='" + navDate + '\'' +
+                ", fundHouse='" + fundHouse + '\'' +
+                ", day1Performance='" + day1Performance + '\'' +
+                ", isRecommended='" + isRecommended + '\'' +
+                ", isSellEnable='" + isSellEnable + '\'' +
+                ", currency='" + currency + '\'' +
+                ", maxRspAmount='" + maxRspAmount + '\'' +
+                ", ipoEndDate='" + ipoEndDate + '\'' +
+                ", minSubseqBuyAmount='" + minSubseqBuyAmount + '\'' +
+                ", minInitialIpoAmount='" + minInitialIpoAmount + '\'' +
+                ", year3='" + year3 + '\'' +
+                ", minInitialBuyAmount='" + minInitialBuyAmount + '\'' +
+                ", custodianFee='" + custodianFee + '\'' +
+                ", earningsPer10000='" + earningsPer10000 + '\'' +
+                ", launchSize='" + launchSize + '\'' +
+                ", fundSize='" + fundSize + '\'' +
+                ", maxIpoAmount='" + maxIpoAmount + '\'' +
+                ", geographicalSector='" + geographicalSector + '\'' +
+                ", fundType='" + fundType + '\'' +
+                ", expectedCofirmedDate='" + expectedCofirmedDate + '\'' +
+                ", expectedDealToBankDate='" + expectedDealToBankDate + '\'' +
+                ", favourite='" + favourite + '\'' +
+                ", unit='" + unit + '\'' +
+                '}';
+    }
 }

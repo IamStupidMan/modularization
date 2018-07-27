@@ -71,7 +71,7 @@ public class ProgressDialogHandler extends Handler {
         if (mContext instanceof BaseActivity) {
             return ((BaseActivity) mContext).getSupportFragmentManager();
         } else {
-            throw new ClassCastException("context is not activity:不要在view中显示进度条");
+            throw new ClassCastException("context is not activity");
         }
     }
 }
