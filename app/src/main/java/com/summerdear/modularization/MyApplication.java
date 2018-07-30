@@ -110,7 +110,7 @@ public class MyApplication extends Application {
         final LogUtils.Config config = LogUtils.getConfig()
                 .setLogSwitch(BuildConfig.DEBUG)// 设置 log 总开关，包括输出到控制台和文件，默认开
                 .setConsoleSwitch(BuildConfig.DEBUG)// 设置是否输出到控制台开关，默认开
-                .setGlobalTag(getResources().getString(R.string.app_name))// 设置 log 全局标签
+                .setGlobalTag("模块化")// 设置 log 全局标签
                 // 当全局标签不为空时，我们输出的 log 全部为该 tag，
                 // 为空时，如果传入的 tag 为空那就显示类名，否则显示 tag
                 .setLogHeadSwitch(true)// 设置 log 头信息开关，默认为开
@@ -123,7 +123,6 @@ public class MyApplication extends Application {
                 .setFileFilter(LogUtils.V)// log 文件过滤器，和 logcat 过滤器同理，默认 Verbose
                 .setStackDeep(1)// log 栈深度，默认为 1
                 .setStackOffset(0);// 设置栈偏移，比如二次封装的话就需要设置，默认为 0
-        LogUtils.d(config.toString());
     }
 
     /**
@@ -131,12 +130,9 @@ public class MyApplication extends Application {
      */
     @SuppressLint("MissingPermission")
     private void initCrash() {
-        CrashUtils.init(new CrashUtils.OnCrashListener() {
-            @Override
-            public void onCrash(String crashInfo, Throwable e) {
-                LogUtils.e(crashInfo);
-                AppUtils.relaunchApp();
-            }
+        CrashUtils.init((crashInfo, e) -> {
+            LogUtils.e(crashInfo);
+            AppUtils.relaunchApp();
         });
     }
 }

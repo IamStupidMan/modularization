@@ -19,8 +19,7 @@ import java.util.List;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/05/03
  *     desc  : utils about file
  * </pre>

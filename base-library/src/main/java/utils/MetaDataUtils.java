@@ -12,8 +12,7 @@ import android.support.annotation.NonNull;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2018/05/15
  *     desc  :
  * </pre>

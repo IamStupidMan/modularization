@@ -27,8 +27,7 @@ import constant.PermissionConstants;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2017/12/29
  *     desc  : utils about permission
  * </pre>

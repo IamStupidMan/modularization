@@ -2,8 +2,11 @@ package http;
 
 
 /**
- * 返回数据的基础类
- * @param <T>
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : RESTFUL返回数据的基础类
+ * </pre>
  */
 public class BaseEntity<T> {
 
@@ -54,5 +57,14 @@ public class BaseEntity<T> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    /**
+     * 规定接口返回code == 0表示接口请求成功
+     *
+     * @return
+     */
+    public boolean isApiSuccess() {
+        return code == 0;
     }
 }

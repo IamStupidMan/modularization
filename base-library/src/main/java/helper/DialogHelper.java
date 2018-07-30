@@ -4,10 +4,9 @@ import utils.PermissionUtils;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2018/01/10
- *     desc  : helper about dialog
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : DialogHelper
  * </pre>
  */
 public class DialogHelper {

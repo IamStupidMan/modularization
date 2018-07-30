@@ -2,8 +2,7 @@ package utils;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/12/05
  *     desc  : 日历相关工具类
  * </pre>

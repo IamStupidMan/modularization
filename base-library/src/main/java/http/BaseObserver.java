@@ -7,7 +7,11 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 /**
- * Created by SummerDear on 2018/7/26.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 观察者
+ * </pre>
  */
 
 public class BaseObserver<T> implements Observer<BaseEntity<T>>, HttpResponseListener<T> {
@@ -41,7 +45,7 @@ public class BaseObserver<T> implements Observer<BaseEntity<T>>, HttpResponseLis
     @Override
     public void onNext(BaseEntity<T> tBaseEntity) {
         //todo 接口协定code == 0表示请求成功
-        if (0 == tBaseEntity.getCode()) {
+        if (tBaseEntity.isApiSuccess()) {
             onSuccess(tBaseEntity.getData());
         } else {
             onFail(new ApiException(tBaseEntity.getCode(), tBaseEntity.getMessage()));

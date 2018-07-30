@@ -6,17 +6,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import http.convert.GsonConverterFactory;
 import http.interceptor.AuthInterceptor;
 import http.interceptor.HeaderInterceptor;
 import http.interceptor.HttpLoggingInterceptor;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 import utils.StringUtils;
 
 /**
- * Created by SummerDear on 2018/7/26.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : RetrofitFactory
+ * </pre>
  */
 
 public class RetrofitFactory {

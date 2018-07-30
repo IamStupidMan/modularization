@@ -19,7 +19,11 @@ import com.trello.rxlifecycle2.components.support.RxDialogFragment;
 import butterknife.Unbinder;
 
 /**
- * dialogfragment的基类
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : DialogFragment的基类
+ * </pre>
  */
 public abstract class BaseDialogFragment extends RxDialogFragment {
 

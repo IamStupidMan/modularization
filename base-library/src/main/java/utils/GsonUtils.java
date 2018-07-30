@@ -9,8 +9,7 @@ import java.lang.reflect.Type;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2018/04/05
  *     desc  : utils about gson
  * </pre>

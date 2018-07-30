@@ -5,9 +5,11 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 
 /**
- * http结果处理函数
- *
- * @author ZhongDaFeng
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : http结果处理函数
+ * </pre>
  */
 public class HttpResultFunction<T> implements Function<Throwable, Observable<T>> {
     @Override

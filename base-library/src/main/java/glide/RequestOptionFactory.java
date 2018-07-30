@@ -7,7 +7,11 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.networklibrary.R;
 
 /**
- * Created by SummerDear on 2018/7/25.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : Glide初始化的RequestOptions工厂
+ * </pre>
  */
 
 public class RequestOptionFactory {

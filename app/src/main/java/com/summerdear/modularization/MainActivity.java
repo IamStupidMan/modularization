@@ -2,18 +2,17 @@ package com.summerdear.modularization;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import base.BaseActivity;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ui.LibActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity {
 
 
     @BindView(R.id.app_hello_tv)
@@ -27,26 +26,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.checkbox)
     CheckBox checkbox;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    public int getLayoutId() {
+        return R.layout.activity_main;
     }
 
+    @Override
+    protected void initData(Bundle savedInstanceState, Intent intent) {
+    }
 
     @Override
-    @OnClick({R.id.app_hello_tv})
-    public void onClick(View v) {
+    public void bindEvent() {
 
+    }
+
+    @Override
+    public void bindUI() {
+        setTitle("主APP的页面标题");
+    }
+
+    @OnClick(R.id.app_hello_tv)
+    public void onViewClicked(View v) {
         switch (v.getId()) {
             case R.id.app_hello_tv:
                 Intent intent = new Intent(this, LibActivity.class);
                 startActivity(intent);
                 break;
-            default:
-                break;
         }
-
     }
 }

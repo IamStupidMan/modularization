@@ -2,8 +2,11 @@ package http;
 
 
 /**
- * 网络响应接口
- * Created by zhangxuehui on 2018/2/8.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 响应接口
+ * </pre>
  */
 public interface HttpResponseListener<T> {
     /**

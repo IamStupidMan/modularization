@@ -2,8 +2,7 @@ package utils;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/08/16
  *     desc  : utils about string
  * </pre>

@@ -11,7 +11,11 @@ import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
 
 /**
- * 接口对象
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : api接口
+ * </pre>
  */
 public interface ApiService {
 

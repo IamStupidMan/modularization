@@ -24,8 +24,7 @@ import static android.Manifest.permission.WRITE_SETTINGS;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/08/02
  *     desc  : utils about screen
  * </pre>

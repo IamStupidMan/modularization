@@ -8,8 +8,7 @@ import android.net.Uri;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/09/25
  *     desc  : 剪贴板相关工具类
  * </pre>

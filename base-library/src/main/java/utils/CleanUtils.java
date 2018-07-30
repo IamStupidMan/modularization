@@ -6,8 +6,7 @@ import java.io.File;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/09/27
  *     desc  : utils about clean
  * </pre>

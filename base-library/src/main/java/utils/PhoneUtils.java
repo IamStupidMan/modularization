@@ -18,8 +18,7 @@ import static android.Manifest.permission.SEND_SMS;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/08/02
  *     desc  : utils about phone
  * </pre>

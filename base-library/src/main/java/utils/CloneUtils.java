@@ -9,8 +9,7 @@ import java.io.Serializable;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2018/01/30
  *     desc  : utils about clone
  * </pre>

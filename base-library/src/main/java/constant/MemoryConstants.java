@@ -7,8 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2017/03/13
  *     desc  : constants of memory
  * </pre>
@@ -16,9 +15,9 @@ import java.lang.annotation.RetentionPolicy;
 public final class MemoryConstants {
 
     public static final int BYTE = 1;
-    public static final int KB   = 1024;
-    public static final int MB   = 1048576;
-    public static final int GB   = 1073741824;
+    public static final int KB = 1024;
+    public static final int MB = 1048576;
+    public static final int GB = 1073741824;
 
     @IntDef({BYTE, KB, MB, GB})
     @Retention(RetentionPolicy.SOURCE)

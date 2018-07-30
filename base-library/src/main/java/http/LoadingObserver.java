@@ -1,6 +1,5 @@
 package http;
 
-
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
 
@@ -8,11 +7,12 @@ import base.BaseActivity;
 import io.reactivex.disposables.Disposable;
 import ui.fragment.LoadingDialogFragment;
 
-
 /**
- * 带loading框的Observer
- *
- * @param <T>
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 带loading框的Observer
+ * </pre>
  */
 public class LoadingObserver<T> extends BaseObserver<T> {
     private Context mContext;

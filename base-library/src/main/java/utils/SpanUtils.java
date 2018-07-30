@@ -58,8 +58,7 @@ import static android.graphics.BlurMaskFilter.Blur;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 16/12/13
  *     desc  : utils about span
  * </pre>

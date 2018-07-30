@@ -2,8 +2,7 @@ package constant;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2017/03/13
  *     desc  : constants of regex
  * </pre>

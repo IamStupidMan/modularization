@@ -2,8 +2,7 @@ package utils;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/09/19
  *     desc  : 相机相关工具类
  * </pre>

@@ -11,8 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2017/12/29
  *     desc  : constants of permission
  * </pre>

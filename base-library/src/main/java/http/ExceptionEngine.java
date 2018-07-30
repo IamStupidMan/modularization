@@ -13,11 +13,12 @@ import java.text.ParseException;
 import retrofit2.HttpException;
 import utils.LogUtils;
 
-
 /**
- * 错误/异常处理工具
- *
- * @author ZhongDaFeng
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 错误/异常处理工具
+ * </pre>
  */
 public class ExceptionEngine {
 

@@ -15,8 +15,7 @@ import constant.CacheConstants;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2018/06/13
  *     desc  : utils about double cache
  * </pre>

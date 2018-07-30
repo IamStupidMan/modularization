@@ -1,5 +1,6 @@
 package ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,15 +14,14 @@ import java.util.Map;
 
 import base.BaseActivity;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import glide.GlideLoader;
 import glide.RequestOptionFactory;
 import http.Api;
 import http.ApiException;
-import http.BaseObserver;
 import http.HttpRequestMap;
 import http.HttpUtils;
+import http.LoadingObserver;
 import model.FundDetailModel;
 import utils.LogUtils;
 import utils.ToastUtils;
@@ -41,19 +41,15 @@ public class LibActivity extends BaseActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lib);
-        ButterKnife.bind(this);
+    public int getLayoutId() {
+        return R.layout.activity_lib;
+    }
 
-        GlideLoader.load(this, GlideLoader.URL, ivPic, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
-        GlideLoader.load(this, GlideLoader.URL, profileImage,RequestOptionFactory.CROP_TYPE_FIT_CENTER);
-
-//        Api.getApiService().fetchSingleFundBasic()
-
+    @Override
+    protected void initData(Bundle savedInstanceState, Intent intent) {
         Map<String, String> request = HttpRequestMap.getRequest();
         request.put("fundCode", "002068");
-        HttpUtils.getData(Api.getApiService().fetchSingleFundBasic(request), new BaseObserver<FundDetailModel>(this, "main") {
+        HttpUtils.getData(Api.getApiService().fetchSingleFundBasic(request), new LoadingObserver<FundDetailModel>(this, "main") {
             @Override
             public void onFail(ApiException e) {
                 ToastUtils.showShort("onFail");
@@ -64,10 +60,22 @@ public class LibActivity extends BaseActivity {
             public void onSuccess(FundDetailModel fundDetailModel) {
                 ToastUtils.showShort("onSuccess");
                 libHelloTv.setText(fundDetailModel.toString());
-                LogUtils.e(fundDetailModel.toString());
                 super.onSuccess(fundDetailModel);
             }
         });
+    }
+
+    @Override
+    public void bindEvent() {
+
+    }
+
+    @Override
+    public void bindUI() {
+        GlideLoader.load(this, GlideLoader.URL, ivPic, RequestOptionFactory.CROP_TYPE_CIRCLE_CROP);
+        GlideLoader.load(this, GlideLoader.URL, profileImage, RequestOptionFactory.CROP_TYPE_FIT_CENTER);
+
+        setTitle("子Lib的页面标题");
     }
 
 

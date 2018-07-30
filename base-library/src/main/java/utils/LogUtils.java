@@ -25,7 +25,6 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Formatter;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -40,8 +39,7 @@ import javax.xml.transform.stream.StreamSource;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/09/21
  *     desc  : utils about log
  * </pre>
@@ -548,25 +546,22 @@ public final class LogUtils {
         if (sExecutor == null) {
             sExecutor = Executors.newSingleThreadExecutor();
         }
-        Future<Boolean> submit = sExecutor.submit(new Callable<Boolean>() {
-            @Override
-            public Boolean call() throws Exception {
-                BufferedWriter bw = null;
+        Future<Boolean> submit = sExecutor.submit(() -> {
+            BufferedWriter bw = null;
+            try {
+                bw = new BufferedWriter(new FileWriter(filePath, true));
+                bw.write(input);
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            } finally {
                 try {
-                    bw = new BufferedWriter(new FileWriter(filePath, true));
-                    bw.write(input);
-                    return true;
+                    if (bw != null) {
+                        bw.close();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    return false;
-                } finally {
-                    try {
-                        if (bw != null) {
-                            bw.close();
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                 }
             }
         });

@@ -29,8 +29,7 @@ import java.lang.reflect.Field;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/09/29
  *     desc  : utils about sToast
  * </pre>

@@ -4,7 +4,11 @@ package http;
 import com.example.networklibrary.BuildConfig;
 
 /**
- * Created by wanglei on 2016/12/31.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : Api provider
+ * </pre>
  */
 
 public class Api {

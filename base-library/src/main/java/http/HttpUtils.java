@@ -9,15 +9,17 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 
 /**
- * 适用Retrofit网络请求Observable(被监听者)
- *
- * @author ZhongDaFeng
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 适用Retrofit网络请求Observable(被监听者)
+ * </pre>
  */
 public class HttpUtils {
 
 
     /**
-     * 不绑定Actvity的生命周期
+     * 不绑定Activity的生命周期
      *
      * @param observable
      * @param observer
@@ -38,7 +40,7 @@ public class HttpUtils {
     }
 
     /**
-     * 自定义在activty的某一个生命周期解绑。
+     * 自定义在Activity的某一个生命周期解绑。
      *
      * @param lifecycle
      * @param observable
@@ -55,8 +57,6 @@ public class HttpUtils {
      * data:网络请求参数
      * <h1>补充说明</h1>
      * 无管理生命周期,容易导致内存溢出
-     *
-     * @author ZhongDaFeng
      */
     public static Observable<?> getObservable(Observable<?> apiObservable) {
         Observable<?> observable = apiObservable
@@ -73,8 +73,6 @@ public class HttpUtils {
      * <h1>补充说明</h1>
      * 传入LifecycleProvider自动管理生命周期,避免内存溢出
      * 备注:需要继承RxActivity.../RxFragment...
-     *
-     * @author ZhongDaFeng
      */
     public static Observable getObservable(Observable<?> apiObservable, LifecycleProvider lifecycle) {
         Observable observable;
@@ -99,8 +97,6 @@ public class HttpUtils {
      * <h1>补充说明</h1>
      * 传入LifecycleProvider<ActivityEvent>手动管理生命周期,避免内存溢出
      * 备注:需要继承RxActivity,RxAppCompatActivity,RxFragmentActivity
-     *
-     * @author ZhongDaFeng
      */
     public static Observable getObservable(Observable<?> apiObservable, LifecycleProvider<ActivityEvent> lifecycle, ActivityEvent event) {
         // showLog(request);
@@ -126,8 +122,6 @@ public class HttpUtils {
      * <h1>补充说明</h1>
      * 传入LifecycleProvider<FragmentEvent>手动管理生命周期,避免内存溢出
      * 备注:需要继承RxFragment,RxDialogFragment
-     *
-     * @author ZhongDaFeng
      */
     public static Observable getObservable(Observable<?> apiObservable, LifecycleProvider<FragmentEvent> lifecycle, FragmentEvent event) {
         Observable observable;

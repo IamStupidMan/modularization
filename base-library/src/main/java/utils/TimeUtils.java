@@ -14,8 +14,7 @@ import constant.TimeConstants;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/08/02
  *     desc  : utils about time
  * </pre>

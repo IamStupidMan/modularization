@@ -9,8 +9,7 @@ import constant.CacheConstants;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2017/05/24
  *     desc  : utils about memory cache
  * </pre>

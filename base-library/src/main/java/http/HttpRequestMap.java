@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by SummerDear on 2018/7/26.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 获取基础的请求map
+ * </pre>
  */
 
 public class HttpRequestMap {

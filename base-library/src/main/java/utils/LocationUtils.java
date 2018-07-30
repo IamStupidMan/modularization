@@ -23,8 +23,7 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 16/11/13
  *     desc  : 定位相关工具类
  * </pre>

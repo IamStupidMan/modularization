@@ -3,7 +3,11 @@ package http;
 import io.reactivex.disposables.Disposable;
 
 /**
- * RxJavaAction管理接口
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : RxJavaAction管理接口
+ * </pre>
  */
 
 public interface ObserverManager<T> {

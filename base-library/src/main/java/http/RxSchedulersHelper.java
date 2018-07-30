@@ -5,7 +5,11 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * 处理Rx线程
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 处理Rx线程
+ * </pre>
  */
 public class RxSchedulersHelper {
 

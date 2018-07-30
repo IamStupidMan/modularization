@@ -11,7 +11,11 @@ import base.BaseActivity;
 import base.BaseFragment;
 
 /**
- * Created by SummerDear on 2018/7/24.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : Glide加载的工具类
+ * </pre>
  */
 
 public class GlideLoader {

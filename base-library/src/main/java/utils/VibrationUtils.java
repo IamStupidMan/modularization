@@ -2,8 +2,7 @@ package utils;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/09/29
  *     desc  : 震动相关工具类
  * </pre>

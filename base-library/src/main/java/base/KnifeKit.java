@@ -9,8 +9,9 @@ import butterknife.Unbinder;
 
 /**
  * <pre>
- *    author: summer
- *    time  : 2018/03/06
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : View绑定
  * </pre>
  */
 

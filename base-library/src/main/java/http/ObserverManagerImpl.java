@@ -5,9 +5,12 @@ import android.os.Build;
 import android.support.v4.util.ArrayMap;
 
 import io.reactivex.disposables.Disposable;
-
 /**
- * RxJavaAction管理实现类
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : RxJavaAction管理实现类
+ * </pre>
  */
 public class ObserverManagerImpl implements ObserverManager<Object> {
 

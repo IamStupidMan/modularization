@@ -26,8 +26,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/08/02
  *     desc  : utils about encrypt
  * </pre>

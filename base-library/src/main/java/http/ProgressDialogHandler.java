@@ -9,7 +9,11 @@ import base.BaseActivity;
 import ui.fragment.LoadingDialogFragment;
 
 /**
- * Created by SummerDear on 2018/7/26.
+ * <pre>
+ *     author: Summer
+ *     time  : 2018/06/13
+ *     desc  : 加载进度条
+ * </pre>
  */
 
 public class ProgressDialogHandler extends Handler {

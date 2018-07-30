@@ -22,8 +22,7 @@ import static android.Manifest.permission.INTERNET;
 
 /**
  * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
+ *     author: Summer
  *     time  : 2016/8/1
  *     desc  : utils about device
  * </pre>
