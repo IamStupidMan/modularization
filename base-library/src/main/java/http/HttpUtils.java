@@ -6,6 +6,7 @@ import com.trello.rxlifecycle2.android.FragmentEvent;
 
 import java.util.concurrent.TimeUnit;
 
+import http.observer.BaseObserver;
 import io.reactivex.Observable;
 
 /**

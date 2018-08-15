@@ -1,9 +1,10 @@
-package http;
+package http.observer;
 
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
 
 import base.BaseActivity;
+import http.basemodel.BaseEntity;
 import io.reactivex.disposables.Disposable;
 import ui.fragment.LoadingDialogFragment;
 

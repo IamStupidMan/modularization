@@ -1,4 +1,4 @@
-package http;
+package http.exception;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.stream.MalformedJsonException;

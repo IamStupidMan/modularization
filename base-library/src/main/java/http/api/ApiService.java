@@ -1,9 +1,10 @@
-package http;
+package http.api;
 
 
 import java.util.List;
 import java.util.Map;
 
+import http.basemodel.BaseEntity;
 import io.reactivex.Observable;
 import model.FundDetailModel;
 import model.FundInfoModel;

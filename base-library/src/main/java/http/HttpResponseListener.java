@@ -1,6 +1,8 @@
 package http;
 
 
+import http.exception.ApiException;
+
 /**
  * <pre>
  *     author: Summer

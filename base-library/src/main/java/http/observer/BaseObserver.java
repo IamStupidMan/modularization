@@ -1,8 +1,13 @@
-package http;
+package http.observer;
 
 import android.content.Context;
 import android.text.TextUtils;
 
+import http.exception.ApiException;
+import http.exception.ExceptionEngine;
+import http.HttpResponseListener;
+import http.ProgressDialogHandler;
+import http.basemodel.BaseEntity;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 

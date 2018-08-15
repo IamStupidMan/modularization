@@ -26,7 +26,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.Charset;
 
-import http.ApiException;
+import http.exception.ApiException;
 import http.HttpStatus;
 import okhttp3.MediaType;
 import okhttp3.ResponseBody;

@@ -1,4 +1,4 @@
-package http;
+package http.observer;
 
 import io.reactivex.disposables.Disposable;
 
