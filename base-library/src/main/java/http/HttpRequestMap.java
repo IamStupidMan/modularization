@@ -27,7 +27,7 @@ public class HttpRequestMap {
      *
      * @return
      */
-    public static final Map<String, String> getRequestWithParams() {
+    public static Map<String, String> getRequestWithParams() {
         Map<String, String> params = getRequest();
         //put一些基础的参数
 //        params.put(KeyConstant.SORT, KeyConstant.SORT_ASC);

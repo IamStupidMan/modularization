@@ -13,7 +13,7 @@ ext {
     dependencies = [
             //android.support lib
             "appcompat-v7"            : "com.android.support:appcompat-v7:${android['supportVersion']}",
-//            "design"              : "com.android.support:design:${android['supportVersion']}",
+//            "design"                  : "com.android.support:design:${android['supportVersion']}",
             "recyclerview-v7"         : "com.android.support:recyclerview-v7:${android['supportVersion']}",
             "cardview-v7"             : "com.android.support:cardview-v7:${android['supportVersion']}",
             "annotations"             : "com.android.support:support-annotations:${android['supportVersion']}",

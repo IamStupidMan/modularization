@@ -23,10 +23,12 @@ public class RequestOptionFactory {
     public static final int CROP_TYPE_FIT_CENTER = 0x14;
 
     /**
+     * todo 替换成自己的图片资源
      * 默认的placeHolder资源
      */
     private static final int DEFAULT_PLACE_HOLDER = R.mipmap.icon_loading;
     /**
+     * todo 替换成自己的图片资源
      * 默认的error资源
      */
     private static final int DEFAULT_ERROR = R.mipmap.icon_load_fail;

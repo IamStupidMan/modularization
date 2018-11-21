@@ -37,6 +37,7 @@ public class ProgressDialogHandler extends Handler {
 
     /**
      * 初始化Loading
+     *
      * @return
      */
     private LoadingDialogFragment getLoading() {

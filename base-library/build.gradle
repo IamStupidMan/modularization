@@ -39,7 +39,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation rootProject.ext.dependencies["appcompat-v7"]
-//    compile rootProject.ext.dependencies["design"]
+//    implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["recyclerview-v7"]
     implementation rootProject.ext.dependencies["cardview-v7"]
     implementation rootProject.ext.dependencies["annotations"]
