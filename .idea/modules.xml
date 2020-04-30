@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects.modularization.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects.modularization.iml" group="modularization" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modularization.iml" filepath="$PROJECT_DIR$/.idea/modularization.iml" />
-      <module fileurl="file://$PROJECT_DIR$/modularization.iml" filepath="$PROJECT_DIR$/modularization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/modularization.app.iml" filepath="$PROJECT_DIR$/app/modularization.app.iml" group="modularization/app" />
     </modules>
   </component>
 </project>

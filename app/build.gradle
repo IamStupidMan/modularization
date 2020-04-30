@@ -1,19 +1,150 @@
 apply plugin: 'com.android.application'
 
+/**
+ * generate a release time stamp
+ */
+def static releaseTimeFull() {
+    return new Date().format("yyyy-MM-dd_HH:mm", TimeZone.getTimeZone("GMT+08:00"))
+}
+
+def release_time = releaseTimeFull()
+
 android {
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.summerdear.modularization"
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 33
+//        build_no versionCode
+//        build_front_name "1.3.1"
+//        apk_prefix "SOHO_ANDROID"
+//        batch_run  true
+//        build_mode  "debug"
+        versionName "1.3.1.33"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            keyAlias 'android.key'
+            keyPassword '123456'
+            storeFile file('android.keystore')
+            storePassword '123456'
+        }
+    }
+
+//    productFlavors {
+//        Staging {
+//            applicationId "com.trade_x.android.staging"
+//            manifestPlaceholders = [package_name : applicationId,
+//                                    JPUSH_PKGNAME: applicationId,
+//                                    JPUSH_APPKEY : "f4018b773e4336cc1510536f",
+//                                    JPUSH_CHANNEL: "staging",
+//                                    app_icon     : "@mipmap/icon_logo",
+//                                    extScheme    : "tradexportstaging",
+//                                    tingyunAppToken:"30be134929074e9a9f4a929924214134"]
+//            resValue "string", "app_name", "TRADE X Debug"
+//
+//            buildConfigField("String", "EXT_SCHEME", '"tradexportstaging"')
+//            buildConfigField("String", "API_HOST", "\"https://tradex-api-staging.zeno-dev.com\"")
+//            buildConfigField("String", "API_VERSION", "\"/api/v2/\"")
+//            buildConfigField("String", "Websocket_HOST", "\"wss://tradex-ws-staging.zeno-dev.com/ws/\"")
+//        }
+//        Demo {
+//            applicationId "com.trade_x.android.demo"
+//            manifestPlaceholders = [package_name : applicationId,
+//                                    JPUSH_PKGNAME: applicationId,
+//                                    JPUSH_APPKEY : "6000bc41c053dc025f748d24",
+//                                    JPUSH_CHANNEL: "demo",
+//                                    extScheme    : "tradexportdemo",
+//                                    app_icon     : "@mipmap/icon_logo",
+//                                    tingyunAppToken:"30be134929074e9a9f4a929924214134"]
+//            resValue "string", "app_name", "TRADE X Demo"
+//
+//            buildConfigField("String", "EXT_SCHEME", '"tradexportdemo"')
+//            buildConfigField("String", "API_HOST", "\"https://tradex-api-demo.zeno-dev.com\"")
+//            buildConfigField("String", "API_VERSION", "\"/api/v2/\"")
+//            buildConfigField("String", "Websocket_HOST", "\"wss://tradex-ws-demo.zeno-dev.com/ws/\"")
+//        }
+//        Prerelease {
+//            applicationId "com.trade_x.android.prerelease"
+//            manifestPlaceholders = [package_name : applicationId,
+//                                    JPUSH_PKGNAME: applicationId,
+//                                    JPUSH_APPKEY : "42a3432ebdbcfac428945ef7",
+//                                    JPUSH_CHANNEL: "prerelease",
+//                                    app_icon     : "@mipmap/icon_logo",
+//                                    extScheme    : "tradexportprerelease",
+//                                    tingyunAppToken:"30be134929074e9a9f4a929924214134"]
+//            resValue "string", "app_name", "TRADE X PreRelease"
+//
+//            buildConfigField("String", "EXT_SCHEME", '"tradexportprerelease"')
+//            buildConfigField("String", "API_HOST", "\"https://tradex-api-pre.zeno-dev.com\"")
+//            buildConfigField("String", "API_VERSION", "\"/api/v2/\"")
+//            buildConfigField("String", "Websocket_HOST", "\"wss://tradex-ws-pre.zeno-dev.com/ws/\"")
+//        }
+//        Production {
+//            applicationId "com.trade_x.android.release"
+//            manifestPlaceholders = [package_name : applicationId,
+//                                    JPUSH_PKGNAME: applicationId,
+//                                    JPUSH_APPKEY : "2a589ccd3868e02b6c058b3b",
+//                                    JPUSH_CHANNEL: "release",
+//                                    app_icon     : "@mipmap/icon_logo",
+//                                    extScheme    : "tradexport",
+//                                    tingyunAppToken:"e8966b08c1664740b12f82636590c01e"]
+//            resValue "string", "app_name", "TRADE X GLOBAL"
+//
+//            buildConfigField("String", "EXT_SCHEME", '"tradexport"')
+//            buildConfigField("String", "API_HOST", "\"https://tradex-api.zeno-dev.com\"")
+//            buildConfigField("String", "API_VERSION", "\"/api/v2/\"")
+//            buildConfigField("String", "Websocket_HOST", "\"wss://tradex-ws.zeno-dev.com/ws/\"")
+//        }
+//    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            zipAlignEnabled false
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //gradle build package name
+    android.applicationVariants.all { variant ->
+        def channelName
+        variant.productFlavors.each { product ->
+            channelName = product.name
+        }
+        variant.outputs.all {
+            outputFileName = "TradeX-V" + defaultConfig.versionName + "-T" + release_time + "_" + channelName + "_" + variant.buildType.name + ".apk"
+        }
+    }
+
+    task printVersionName {
+        println defaultConfig.versionName
+    }
+    flavorDimensions 'evn'
+    productFlavors {
+        staging {
+            dimension = 'evn'
+            applicationId = 'tradex.staging'
+            signingConfig signingConfigs.release
+        }
+        demo {
+            dimension = 'evn'
+            applicationId = 'tradex.demo'
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -26,3 +157,16 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+
+if(hasProperty("batchRun")){
+    rootProject.ext.batch_run = true
+}
+if(hasProperty("BuildMode")){
+    rootProject.ext.build_mode = BuildMode
+}
+if(hasProperty("BuildNo")){
+    rootProject.ext.build_no = BuildNo
+    rootProject.ext.build_version = rootProject.ext.build_front_name + "_" + rootProject.ext.build_no
+}
+//apply from: 'tools.gradle'
