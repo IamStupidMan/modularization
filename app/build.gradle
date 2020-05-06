@@ -74,7 +74,6 @@ def release_time = releaseTimeFull()
 //}
 
 android {
-
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.summerdear.modularization"
