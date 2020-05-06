@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState, persistentState);
 
     }
-
     //    @BindView(R.id.app_hello_tv)
 //    TextView appHelloTv;
 //    @BindView(R.id.radio1)
