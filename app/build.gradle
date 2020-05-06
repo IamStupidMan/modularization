@@ -134,19 +134,19 @@ android {
     task printVersionName {
         println defaultConfig.versionName
     }
-    flavorDimensions 'evn'
-    productFlavors {
-        staging {
-            dimension = 'evn'
-            applicationId = 'tradex.staging'
-            signingConfig signingConfigs.release
-        }
-        demo {
-            dimension = 'evn'
-            applicationId = 'tradex.demo'
-            signingConfig signingConfigs.release
-        }
-    }
+//    flavorDimensions 'evn'
+//    productFlavors {
+//        staging {
+//            dimension = 'evn'
+//            applicationId = 'tradex.staging'
+//            signingConfig signingConfigs.release
+//        }
+//        demo {
+//            dimension = 'evn'
+//            applicationId = 'tradex.demo'
+//            signingConfig signingConfigs.release
+//        }
+//    }
 }
 
 dependencies {

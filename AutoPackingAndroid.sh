@@ -27,13 +27,13 @@ read parameter
 sleep ${__SLEEP_TIME}
 __BUILD_CONFIGURATION_SELECTED="${parameter}"
 
-# 判读用户是否有输入
-if [[ "${__BUILD_CONFIGURATION_SELECTED}" == "1" ]]; then
+ 判读用户是否有输入
+if [ "${__BUILD_CONFIGURATION_SELECTED}" = "1" ]; then
 __BUILD_CONFIGURATION="Debug"
-elif [[ "${__BUILD_CONFIGURATION_SELECTED}" == "2" ]]; then
+elif [ "${__BUILD_CONFIGURATION_SELECTED}" = "2" ]; then
 __BUILD_CONFIGURATION="Release"
 else
-__BUILD_CONFIGURATION="All"
+__BUILD_CONFIGURATION="Debug"
 fi
 # ************************* 基础END ********************************
 
@@ -93,9 +93,9 @@ sleep ${__SLEEP_TIME}
 __IS_AUTO_OPENT_FILE_SELECTED="${parameter}"
 
 # 判读用户是否有输入
-if [[ "${__IS_AUTO_OPENT_FILE_SELECTED}" == "1" ]]; then
+if [ "${__IS_AUTO_OPENT_FILE_SELECTED}" = "1" ]; then
 __IS_AUTO_OPENT_FILE=true
-elif [[ "${__IS_AUTO_OPENT_FILE_SELECTED}" == "2" ]]; then
+elif [ "${__IS_AUTO_OPENT_FILE_SELECTED}" = "2" ]; then
 __IS_AUTO_OPENT_FILE=false
 else
 echo "${__LINE_BREAK_LEFT} 您输入的成功出包后是否自动打开文件夹 参数错误!!! ${__LINE_BREAK_RIGHT}"
@@ -112,9 +112,9 @@ sleep ${__SLEEP_TIME}
 __IS_START_PACKINF="${parameter}"
 
 # 判读用户是否有输入
-if [[ "${__IS_START_PACKINF}" == "1" ]]; then
+if [ "${__IS_START_PACKINF}" = "1" ]; then
 echo "${__LINE_BREAK_LEFT} 立即开始 ${__LINE_BREAK_RIGHT}"
-elif [[ "${__IS_START_PACKINF}" == "2" ]]; then
+elif [ "${__IS_START_PACKINF}" = "2" ]; then
 echo "${__LINE_BREAK_LEFT} 您退出了打包 ${__LINE_BREAK_RIGHT}"
 exit 1
 else
@@ -145,11 +145,11 @@ echo "${__LINE_BREAK_LEFT} 开始clean项目 ${__LINE_BREAK_RIGHT}"
 gradle clean
 
 # 第二步 打包
-if [[ "${__BUILD_CONFIGURATION}" == "Debug" ]]; then
+if [ "${__BUILD_CONFIGURATION}" = "Debug" ]; then
 # debug打包
 echo "${__LINE_BREAK_LEFT} 开始打包项目，当前打包Debug版本 ${__LINE_BREAK_RIGHT}"
 gradle assembleDebug
-elif [[ "${__BUILD_CONFIGURATION}" == "Release" ]]; then
+elif [ "${__BUILD_CONFIGURATION}" = "Release" ]; then
 # release打包
 echo "${__LINE_BREAK_LEFT} 开始打包项目，当前打包Release版本 ${__LINE_BREAK_RIGHT}"
 gradle assembleRelease
